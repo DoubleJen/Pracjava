@@ -16,7 +16,7 @@ public class Hellodouble001 {
 		//"sysout + alt + /" quicks to System.out.println();
 		
 		/*
-		 * "@XXXXX" is Javadoc mark. 
+		 * "@XXXXX" is Javadoc mark, http://www.sharebody.com/list.asp?id=50491
 		 */
 
 		/*
@@ -25,5 +25,4 @@ public class Hellodouble001 {
 		 * such as "Tasks(with todo)", "Console(with Output)", "Package Explorer(with Outline)"...
 		 */
 	}
-
 }
