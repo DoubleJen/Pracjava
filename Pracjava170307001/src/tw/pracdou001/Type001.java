@@ -45,7 +45,7 @@ public class Type001 {
 			 */
 		System.out.println(var5);//>-3
 		
-	
+		
 
 		
 	}
