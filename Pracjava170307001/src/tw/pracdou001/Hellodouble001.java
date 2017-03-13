@@ -6,6 +6,7 @@ public class Hellodouble001 {
 	public static void main(String[] args) {
 		System.out.println("Hello, Double");
 		System.out.println("Hello, Rainyday");
+		System.out.println("GOOD JOB!!!");
 	
 		// "//" is single row note.
 		
