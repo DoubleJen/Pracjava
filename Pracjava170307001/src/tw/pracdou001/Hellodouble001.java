@@ -3,8 +3,13 @@ package tw.pracdou001;//1st line can exist or not.
 public class Hellodouble001 {
 
 	public static void main(String[] args) {
+		System.out.println("Assignment：顯示如Hello, World之範例");
+		System.out.println();//Assignment下空一行
+		
 		System.out.println("Hello, Double");
 		System.out.println("Hello, Rainyday");
+		
+		System.out.println("------------------------");
 		System.out.println("GOOD JOB!!!");
 	
 		// "//" is single row note.

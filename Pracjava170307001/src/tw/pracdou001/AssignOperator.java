@@ -12,6 +12,8 @@ public class AssignOperator {
 		System.out.println(a);//-->6*2=12
 		a /= 2;
 		System.out.println(a);//-->12/2=6
+		
+		System.out.println("--------------------------------");
 		System.out.println("GOOD JOB!!!");
 	}
 
