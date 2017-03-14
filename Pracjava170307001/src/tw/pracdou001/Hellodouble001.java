@@ -1,6 +1,5 @@
-package tw.pracdou001;
-		//1st line can exist or not.
-
+package tw.pracdou001;//1st line can exist or not.
+//HelloWorld範例
 public class Hellodouble001 {
 
 	public static void main(String[] args) {

@@ -6,7 +6,7 @@ public class Type001 {
 		
 		/*variable definition rule,
 		 * 1st digital use [a-zA-Z$_]
-		 * 2nd digital use [a-zA-Z0-9$_]...
+		 * 2nd digital use [a-zA-Z0-9$_]*...
 		 * don't use keyword(color word)]
 		 */
 		
