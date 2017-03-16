@@ -18,7 +18,7 @@ public class Guessnumber {
 			poker[i] = temp;
 			check[temp] = true;
 		}
-		String ret = " ";
+		String ret = "";
 		for(int v:poker){ret += v;}
 		return ret;
 		//return " " + poker[0] + poker[1] + poker[2];//d.傳回字串
@@ -31,7 +31,7 @@ public class Guessnumber {
 	
 	// method: checkAB(answer, guess) => ?A?B
 	static String checkAB(String answer, String guess){
-		int A, B; A =0; B=0;
+		int A, B; A = B = 0;
 		for(int i=0; i<guess.length(); i++){//字串.length()：呼叫方法；陣列.length：屬性
 			if(guess.charAt(i) == answer.charAt(i)){A++;}
 			else if(answer.indexOf(guess.charAt(i)) != -1){B++;}//"!="：不等於
