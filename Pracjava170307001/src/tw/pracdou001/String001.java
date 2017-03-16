@@ -40,7 +40,7 @@ public class String001 {
 		
 		char c1= str3.charAt(4);//取出str3 0-7中的4
 		System.out.println(c1);//e
-		System.out.println("abcdefgh".charAt(4));//e
+		System.out.println("abcdefgh".charAt(0));//a
 		System.out.println("-------------------------");
 		
 		System.out.println(str3.indexOf('e'));//-->傳回字母e在str3中位置，產生4
