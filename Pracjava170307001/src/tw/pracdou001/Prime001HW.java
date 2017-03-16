@@ -1,5 +1,5 @@
 package tw.pracdou001;
-//質數
+//質數Prime Number
 public class Prime001HW {
 
 	public static void main(String[] args) {
