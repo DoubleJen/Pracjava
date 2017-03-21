@@ -48,7 +48,7 @@ public class Guessnumber {
 		String answer = createAnswer(3);//a.宣告一謎底，其為字串。無API，可自創一方法createAnswer
 									   //b.static方法只能呼叫static方法
 									   //e.於createAnswer方法創立後，呼叫產生謎底
-									   //在createAnswer方法中定義int d(ex line6)可於此處()中控制answer的長度
+									   //在createAnswer方法中定義int d，可於此處()中控制answer的長度
 		System.out.println(answer);
 		
 		
@@ -60,8 +60,9 @@ public class Guessnumber {
 			String guess =JOptionPane.showInputDialog((i+1) + ".猜一個數字\n" + hist);
 			//2.2.	Compare with Answer, and return result: ?A?B
 			String result = checkAB(answer, guess);
-			hist += (i+1) + ". " + guess + ":" + result + "\n";
+			//hist += (i+1) + ". " + guess + ":" + result + "\n";
 			JOptionPane.showMessageDialog(null, result);
+			hist += (i+1) + ". " + guess + ":" + result + "\n";
 			//2.3.	Guess Right =>Break Loop =>3.Show Ending Message "Congratulaiton, WINNER!!!"
 			if(result.equals("3A0B")){isWinner = true; break;}
 			//2.4.	Guess Error =>Repeat 10 times =>3.Show Ending Message "TOO BAD!!!"
