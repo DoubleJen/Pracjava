@@ -70,10 +70,26 @@ public class MatchVSRegex {
 		System.out.println(s16.matches("^[a-zA-Z][\\w]{5,17}$"));//驗證用戶密碼，正確格式為：以字母開頭，長度在 6~18 之間(含字母)，只能包含字符、數字和下劃線。
 		System.out.println("16.----------------------------------------------------");
 		
-		String s17 = "^[^%&』,;=?$\'";//-->
-		System.out.println(s17.matches("^[^%&』,;=?$\']+$"));//驗證是否含有^%&』,;=?$\"等字符。
+		String s17 = "\\";//-->true
+		System.out.println(s17);
+		System.out.println(s17.matches("^[%&』,;=?$\"\\\\^]+[\\d]*$"));//驗證字串開頭是否含有%&』,;=?$"\^等字符。
+		System.out.println(s17.matches("^[%&』,;=?$\"\\x5C^]+[\\d]*$"));//\改為ASCII寫法。https://zh.wikipedia.org/wiki/ASCII
+		System.out.println(s17.matches("^[%&』,;=?$\"\\u005C^]+[\\d]*$"));//\改為Unicode寫法。https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%88%97%E8%A1%A8
+			//System.out.println(s17.matches("^[%&』,;=?$\"\\^]+[\\d]*$"));//^前需補兩個\\
 		System.out.println("17.----------------------------------------------------");
-		//驗證是否含有^%&』,;=?$\"等字符："[^%&』,;=?$\x22]+"
+		
+		String s18 = "資策會";//-->true
+		System.out.println(s18);
+		System.out.println(s18.matches("^[\\u4E00-\\u9FA5]{0,}$"));//驗證只能輸入漢字。
+		System.out.println("18.----------------------------------------------------");
+		//http://blog.udn.com/glwang/3931534
+		//https://blog.oasisfeng.com/2006/10/19/full-cjk-unicode-range/
+		//http://www.cns11643.gov.tw/AIDB/welcome.do
+		
+		
+		
+		
+		
 		
 	}
 

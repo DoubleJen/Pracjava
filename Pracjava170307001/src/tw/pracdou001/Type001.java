@@ -1,5 +1,5 @@
 package tw.pracdou001;
-//JAVA八大型別(byte short int lonog ,float double char boolean未整理)
+//JAVA八大型別(byte short int long ,float double char boolean未整理)
 public class Type001 {
 
 	public static void main(String[] args) {
