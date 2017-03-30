@@ -86,7 +86,7 @@ public class MatchVSRegex {
 		//https://blog.oasisfeng.com/2006/10/19/full-cjk-unicode-range/
 		//http://www.cns11643.gov.tw/AIDB/welcome.do
 		
-		String s19 = "123456789012345";
+		String s19 = "123456789012345678";
 		System.out.println(s19.matches("^([\\d]{15}|[\\d]{18})$"));//驗證15 位或 18 位數字。
 		System.out.println("19.----------------------------------------------------");
 		
@@ -97,15 +97,33 @@ public class MatchVSRegex {
 		System.out.println("20.----------------------------------------------------");
 		
 		for(int i=1; i<=31; i++){
-			String d = Integer.toString(i);//int i轉型為字串m。
-			System.out.println(d + "\t" + d.matches("(^0?[1-9]|(1|2)[0-9]|30|31)$"));//驗證一個月的 31 天。
+			String d = Integer.toString(i);//int i轉型為字串d。
+			System.out.println(d + "\t" + d.matches("^(0?[1-9]|(1|2)[0-9]|30|31)$"));//驗證一個月的 31 天。
 		}
 		System.out.println("21.----------------------------------------------------");
 		
-		String s22 = "1234567";//-->true
-		System.out.println(s22.matches("^(\\d{2,4}-)?\\d{7,8}$"));//。
+		String s22 = "0836-12345";
+		System.out.println(s22.matches("^(0[\\d]{1,3})-?([\\d]{5,8})$"));//驗證中華民國長途電話。
 		System.out.println("22.----------------------------------------------------");
-		//"^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$"
+		//https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E9%95%B7%E9%80%94%E9%9B%BB%E8%A9%B1%E5%8D%80%E8%99%9F%E8%A1%A8
+		
+		String s23 = "0932-123456";
+		System.out.println(s23.matches("^(09[\\d]{2})-?([\\d]{6})$"));//驗證手機號碼。
+		System.out.println("23.----------------------------------------------------");
+		
+		String s24 = "2017-3-2";
+		System.out.println(s24.matches("^([\\d]{1,4})-(0?[1-9]|1[0-2])-(0?[1-9]|(1|2)[0-9]|30|31)$"));//驗證西元年月日yyyy-mm-dd。
+		System.out.println("24.----------------------------------------------------");
+		
+		String s25 = "23:59:59";
+		System.out.println(s25.matches("^([0-2][0-9])((:[0-5][0-9]){2})$"));//驗證時間(24小時制)hh:mm:ss。
+		System.out.println("25.----------------------------------------------------");
+		
+		String s26 = "61.66.255.255";
+		System.out.println(s26.matches("^([12]?[\\d]?[\\d])(.[12]?[\\d]?[\\d]){3}$"));//驗證IPv4位址。
+		System.out.println("26.----------------------------------------------------");
+		//http://blog.xuite.net/jin117/blog/59564941
+		//http://rms.twnic.net.tw/twnic/User/Member/Search/main7.jsp?Order=ORG.ID
 	}
 
 }
