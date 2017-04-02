@@ -1,6 +1,6 @@
 package tw.pracdou001;
 //質數Prime Number
-public class Prime001HW {
+public class HWPrime001 {
 
 	public static void main(String[] args) {
 		System.out.println("Assignment：每列10個數字為單位，列出1-100，並於質數後加上***");

@@ -59,7 +59,7 @@ class IP{
 
 
 
-public class Regex001HW {
+public class HWRegex001 {
 	public static void main(String[] args) {
 		System.out.println("Assignment：既定格式下，印出市內電話、手機號碼、西元年月日、時間（時:分:秒）、IP位址");
 		System.out.println();//Assignment下空一行
