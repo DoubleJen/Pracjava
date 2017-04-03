@@ -1,6 +1,6 @@
 package tw.pracdou001;
 //99乘法
-public class Nineniemultiplication {
+public class Nineninemultiplication {
 
 	public static void main(String[] args) {
 		System.out.println("Assignment：顯示九九乘法表");
