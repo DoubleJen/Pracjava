@@ -1,6 +1,7 @@
 package tw.pracdou001;
 //LayoutManager(FlowLayout, BorderLayout, CardLayout, GridLayout, GridBagLayout)
 //http://ccy.dd.ncu.edu.tw/~chen/course/Java/ch6/6.htm
+//http://www.kaiching.org/2011/05/java-gridbaglayout.html
 //http://www.kaiching.org/2012/06/java-api-gridbagconstraints.html
 import java.awt.*;
 import java.applet.*; 
