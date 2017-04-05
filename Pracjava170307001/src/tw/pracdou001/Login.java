@@ -23,17 +23,17 @@ public class Login extends JFrame {
 	JTextField IDInput =  new JTextField(20);
 	
 	JLabel Pass = new JLabel("Password");
-	JPasswordField PassInput = new JPasswordField(20);
-//	{
-//		//private boolean bDraw = true;
-//		public void paint(Graphics g){
-//			super.paint(g);
-//			if(new String(PassInput.getPassword()).length() == 0){//bDraw && 
-//				g.setColor(Color.GRAY);
-//				g.drawString("請輸入密碼", 15, 15);
-//			}
-//		}
-//	};
+	JPasswordField PassInput = new JPasswordField(20)
+	{
+		//private boolean bDraw = true;
+		public void paint(Graphics g){
+			super.paint(g);
+			if(new String(PassInput.getPassword()).length() == 0){//bDraw && 
+				g.setColor(Color.GRAY);
+				g.drawString("請輸入密碼", 15, 15);
+			}
+		}
+	};
 	
 	JButton Enter = new JButton("ENTER");
 	JButton Clear = new JButton("CLEAR");

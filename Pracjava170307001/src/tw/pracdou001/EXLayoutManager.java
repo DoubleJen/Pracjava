@@ -7,7 +7,7 @@ import java.awt.*;
 import java.applet.*; 
 import java.awt.event.*;   
 
-public class LayoutManager extends Applet implements ActionListener{
+public class EXLayoutManager extends Applet implements ActionListener{
 	Panel myPanel;
 	Button[] myButton= new Button[5];
     CardLayout Card=new CardLayout(); 

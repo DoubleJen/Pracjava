@@ -16,15 +16,42 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ToolTipManager;
 
 public class Login001 extends JFrame {
-	String[] n ={"帳號或手機號碼/Username or CellPhone", 
-				"密碼/Password", 
-				"登入/Login", 
-				"忘記密碼/Forget Password", 
-				"註冊新帳號/New Registration" };
+	
+	static String[] n ={"帳號或手機號碼/Username or CellPhone", 
+						"密碼/Password", 
+						"登入/Login", 
+						"忘記密碼/Forget Password", 
+						"註冊新帳號/New Registration" };
+	
+	static JTextField IdInput = new JTextField(20){
+			protected void paintComponent(Graphics g) {
+				super.paintComponent(g);
+				if(new String(IdInput.getText()).length() == 0){
+					g.setColor(Color.GRAY);
+					g.drawString(n[0], 10, 15);
+				}
+			};
+	};
+	
+	static JPasswordField PassInput = new JPasswordField(20){
+			protected void paintComponent(Graphics g) {
+				super.paintComponent(g);
+				if(new String(PassInput.getPassword()).length() == 0){
+					g.setColor(Color.GRAY);
+					g.drawString(n[1], 10, 15);
+				}
+			};
+	};
+	
+	static JButton BLogin = new JButton(n[2]);
+	static JButton BForget = new JButton(n[3]);
+	static JButton BRegis = new JButton(n[4]);
 	
 	private ButtonHandler ButtonEvent = new ButtonHandler();
 	private class ButtonHandler{		
@@ -45,7 +72,7 @@ public class Login001 extends JFrame {
 		login2.setBackground(Color.white);
 		login2.setPreferredSize(new Dimension(0, 200));
 		
-		JTextField IdInput = new JTextField(n[0] ,25);
+		IdInput.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		GridBagConstraints IdInput1 = new GridBagConstraints();
 		IdInput1.gridx = 0;
 		IdInput1.gridy = 0;
@@ -58,7 +85,7 @@ public class Login001 extends JFrame {
 		IdInput1.insets = new Insets(10, 5, 10, 5);
 		login2.add(IdInput, IdInput1);
 		
-		JPasswordField PassInput = new JPasswordField(n[1] ,25);
+		PassInput.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		PassInput.setEchoChar('*');
 		PassInput.setToolTipText("密碼長度6位以上、小於20位，限a-z、A-Z、0-9、$_*%?^");
 //		PassInput.setPreferredSize(new Dimension(0, 20));
@@ -74,7 +101,6 @@ public class Login001 extends JFrame {
 		PassInput1.insets = new Insets(10, 5, 10, 5);
 		login2.add(PassInput, PassInput1);
 		
-		JButton BLogin = new JButton(n[2]);
 		GridBagConstraints BLogin1 = new GridBagConstraints();
 		BLogin1.gridx = 0;
 		BLogin1.gridy = 2;
@@ -87,7 +113,6 @@ public class Login001 extends JFrame {
 		BLogin1.insets = new Insets(10, 5, 10, 5);
 		login2.add(BLogin, BLogin1);
 		
-		JButton BForget = new JButton(n[3]);
 		GridBagConstraints BForget1 = new GridBagConstraints();
 		BForget1.gridx = 0;
 		BForget1.gridy = 3;
@@ -100,7 +125,6 @@ public class Login001 extends JFrame {
 		BForget1.insets = new Insets(10, 5, 10, 5);
 		login2.add(BForget, BForget1);
 		
-		JButton BRegis = new JButton(n[4]);
 		GridBagConstraints BRegis1 = new GridBagConstraints();
 		BRegis1.gridx = 1;
 		BRegis1.gridy = 3;
@@ -114,20 +138,11 @@ public class Login001 extends JFrame {
 		login2.add(BRegis, BRegis1);
 		
 		
-	
-//		ID.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-//		Pass.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
-
-//		
-		
-		
-		
-		
 		setVisible(true);
 		setLocationRelativeTo(null);//setLocation(350, 350);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		add(login2, BorderLayout.SOUTH);//login1.setContentPane(login2);
-		pack();//login1.setSize(260, 500); login.setResizable(false);
+		add(login2, BorderLayout.NORTH);//login1.setContentPane(login2);
+		setSize(500, 300); setResizable(false);//pack();
 		
 		
 	}

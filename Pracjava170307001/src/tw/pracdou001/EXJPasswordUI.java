@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class JPasswordUI extends JFrame
+public class EXJPasswordUI extends JFrame
 {
     private JLabel Jlb_ID = new JLabel("帳號");
     private JLabel Jlb_PW = new JLabel("密碼");
@@ -15,7 +15,7 @@ public class JPasswordUI extends JFrame
     private ButtonHandler hbtHandler = new ButtonHandler();  //處理按鈕事件 
     
 
-    public JPasswordUI()
+    public EXJPasswordUI()
     {
         super("輸入帳號密碼"); 
         Container c = getContentPane(); 
@@ -87,6 +87,6 @@ public class JPasswordUI extends JFrame
     
     public static void main(String [] args)
     {
-        JPasswordUI pw = new JPasswordUI();
+        EXJPasswordUI pw = new EXJPasswordUI();
     }
 }
