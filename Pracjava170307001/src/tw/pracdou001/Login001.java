@@ -10,10 +10,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
@@ -21,15 +24,17 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ToolTipManager;
 
-public class Login001 extends JFrame {
+
+
+public class Login001 extends JFrame{
 	
-	static String[] n ={"帳號或手機號碼/Username or CellPhone", 
+	protected String[] n ={"帳號或手機號碼/Username or CellPhone", 
 						"密碼/Password", 
 						"登入/Login", 
 						"忘記密碼/Forget Password", 
 						"註冊新帳號/New Registration" };
 	
-	static JTextField IdInput = new JTextField(20){
+	protected JTextField IdInput = new JTextField(20){
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				if(new String(IdInput.getText()).length() == 0){
@@ -39,7 +44,7 @@ public class Login001 extends JFrame {
 			};
 	};
 	
-	static JPasswordField PassInput = new JPasswordField(20){
+	JPasswordField PassInput = new JPasswordField(20){
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				if(new String(PassInput.getPassword()).length() == 0){
@@ -49,16 +54,12 @@ public class Login001 extends JFrame {
 			};
 	};
 	
-	static JButton BLogin = new JButton(n[2]);
-	static JButton BForget = new JButton(n[3]);
-	static JButton BRegis = new JButton(n[4]);
-	
-	private ButtonHandler ButtonEvent = new ButtonHandler();
-	private class ButtonHandler{		
-	}
-	
-	
-	
+	protected JButton BLogin = new JButton(n[2]);	
+	protected JButton BForget = new JButton(n[3]);
+	protected JButton BRegis = new JButton(n[4]);
+	ButtonEvent Btouch = new ButtonEvent();
+
+
 	
 	
 	Login001(){
@@ -101,6 +102,7 @@ public class Login001 extends JFrame {
 		PassInput1.insets = new Insets(10, 5, 10, 5);
 		login2.add(PassInput, PassInput1);
 		
+		BLogin.addActionListener(Btouch);
 		GridBagConstraints BLogin1 = new GridBagConstraints();
 		BLogin1.gridx = 0;
 		BLogin1.gridy = 2;
@@ -113,6 +115,7 @@ public class Login001 extends JFrame {
 		BLogin1.insets = new Insets(10, 5, 10, 5);
 		login2.add(BLogin, BLogin1);
 		
+		BForget.addActionListener(Btouch);
 		GridBagConstraints BForget1 = new GridBagConstraints();
 		BForget1.gridx = 0;
 		BForget1.gridy = 3;
@@ -125,6 +128,7 @@ public class Login001 extends JFrame {
 		BForget1.insets = new Insets(10, 5, 10, 5);
 		login2.add(BForget, BForget1);
 		
+		BRegis.addActionListener(Btouch);
 		GridBagConstraints BRegis1 = new GridBagConstraints();
 		BRegis1.gridx = 1;
 		BRegis1.gridy = 3;
@@ -142,12 +146,31 @@ public class Login001 extends JFrame {
 		setLocationRelativeTo(null);//setLocation(350, 350);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		add(login2, BorderLayout.NORTH);//login1.setContentPane(login2);
-		setSize(500, 300); setResizable(false);//pack();
-		
-		
+		setSize(500, 300); setResizable(false);//pack();	
 	}
 	
-	
-	
+	protected class ButtonEvent implements ActionListener{
+		
+		protected void BLogin(){
+			if(!new String(PassInput.getPassword()).equals("123")){
+				JOptionPane.showMessageDialog(null, "密碼有誤，請重新登入");
+			}
+		}
+		protected void BForget(){
+			System.out.println("BForget");
+		}
+		protected void BRegis(){
+			System.out.println("BRegis");
+		} 
+		
+		@Override
+		public void actionPerformed(ActionEvent e){
+			if(e.getSource() == BLogin){BLogin();}
+			else if(e.getSource() == BForget){BForget();}
+			else if(e.getSource() == BRegis){BRegis();}
+		}
+	}
 	
 }
+
+
