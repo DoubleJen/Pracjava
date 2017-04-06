@@ -24,60 +24,54 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ToolTipManager;
 
-
-
 public class Login001 extends JFrame{
+	private String[] n ={"帳號或手機號碼 Username or CellPhone", 
+							"密碼 Password", 
+							"登入 Login", 
+							"忘記密碼 Forget Password", 
+							"註冊新帳號 New Registration" };
 	
-	protected String[] n ={"帳號或手機號碼/Username or CellPhone", 
-						"密碼/Password", 
-						"登入/Login", 
-						"忘記密碼/Forget Password", 
-						"註冊新帳號/New Registration" };
-	
-	protected JTextField IdInput = new JTextField(20){
+	private JTextField IdInput = new JTextField(20){
+			
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				if(new String(IdInput.getText()).length() == 0){
 					g.setColor(Color.GRAY);
-					g.drawString(n[0], 10, 15);
+					g.drawString(n[0], 10, 18);
 				}
 			};
 	};
 	
-	JPasswordField PassInput = new JPasswordField(20){
+	private JPasswordField PassInput = new JPasswordField(20){
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				if(new String(PassInput.getPassword()).length() == 0){
 					g.setColor(Color.GRAY);
-					g.drawString(n[1], 10, 15);
+					g.drawString(n[1], 10, 18);
 				}
 			};
 	};
 	
-	protected JButton BLogin = new JButton(n[2]);	
-	protected JButton BForget = new JButton(n[3]);
-	protected JButton BRegis = new JButton(n[4]);
-	ButtonEvent Btouch = new ButtonEvent();
+	private JButton BLogin = new JButton(n[2]);	
+	private JButton BForget = new JButton(n[3]);
+	private JButton BRegis = new JButton(n[4]);
+	private ButtonEvent Btouch = new ButtonEvent();
 
-
-	
 	
 	Login001(){
-//		JFrame login1 = new JFrame("請輸入帳號密碼");//
-//		login1.setLayout(new BorderLayout());
-		super("請輸入帳號密碼");
+		super("會員登入");
 		setLayout(new BorderLayout());
 		
 		JPanel login2 = new JPanel();
-		login2.setLayout(new GridBagLayout());//new FlowLayout(FlowLayout.CENTER, 10, 10)
+		login2.setLayout(new GridBagLayout());//new FlowLayout(FlowLayout.CENTER, 10, 10)...
 		login2.setBackground(Color.white);
 		login2.setPreferredSize(new Dimension(0, 200));
 		
-		IdInput.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+		IdInput.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));//IdInput.setFont(new Font("Arial Unicode MS", Font.BOLD, 16));
 		GridBagConstraints IdInput1 = new GridBagConstraints();
 		IdInput1.gridx = 0;
 		IdInput1.gridy = 0;
-		IdInput1.gridwidth = 10;
+		IdInput1.gridwidth = 8;
 		IdInput1.gridheight = 1;
 		IdInput1.weightx = 0;
 		IdInput1.weighty = 0;
@@ -89,11 +83,10 @@ public class Login001 extends JFrame{
 		PassInput.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		PassInput.setEchoChar('*');
 		PassInput.setToolTipText("密碼長度6位以上、小於20位，限a-z、A-Z、0-9、$_*%?^");
-//		PassInput.setPreferredSize(new Dimension(0, 20));
 		GridBagConstraints PassInput1 = new GridBagConstraints();
 		PassInput1.gridx = 0;
 		PassInput1.gridy = 1;
-		PassInput1.gridwidth = 10;
+		PassInput1.gridwidth = 8;
 		PassInput1.gridheight = 1;
 		PassInput1.weightx = 0;
 		PassInput1.weighty = 0;
@@ -106,7 +99,7 @@ public class Login001 extends JFrame{
 		GridBagConstraints BLogin1 = new GridBagConstraints();
 		BLogin1.gridx = 0;
 		BLogin1.gridy = 2;
-		BLogin1.gridwidth = 10;
+		BLogin1.gridwidth = 8;
 		BLogin1.gridheight = 1;
 		BLogin1.weightx = 0;
 		BLogin1.weighty = 0;
@@ -145,21 +138,21 @@ public class Login001 extends JFrame{
 		setVisible(true);
 		setLocationRelativeTo(null);//setLocation(350, 350);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		add(login2, BorderLayout.NORTH);//login1.setContentPane(login2);
+		add(login2, BorderLayout.NORTH);
 		setSize(500, 300); setResizable(false);//pack();	
 	}
 	
-	protected class ButtonEvent implements ActionListener{
+	private class ButtonEvent implements ActionListener{
 		
-		protected void BLogin(){
-			if(!new String(PassInput.getPassword()).equals("123")){
+		private void BLogin(){
+			if(!new String(PassInput.getPassword()).equals("anObject")){
 				JOptionPane.showMessageDialog(null, "密碼有誤，請重新登入");
 			}
 		}
-		protected void BForget(){
+		private void BForget(){
 			System.out.println("BForget");
 		}
-		protected void BRegis(){
+		private void BRegis(){
 			System.out.println("BRegis");
 		} 
 		
@@ -172,5 +165,16 @@ public class Login001 extends JFrame{
 	}
 	
 }
+
+//class OriginalID extends Login001{
+//	String get(){
+//		String ID = JOptionPane.showInputDialog("請輸入帳號或手機號碼 Username or CellPhone");
+//		while(!ID.matches("^([A-Za-z0-9])|(09[\\d]{2}[\\d]{6})$")){
+//			JOptionPane.showMessageDialog(null, "您輸入的格式有誤，請重新輸入");
+//			ID = JOptionPane.showInputDialog("請輸入帳號或手機號碼 Username or CellPhone");
+//		}
+//		return 
+//	}
+//}
 
 

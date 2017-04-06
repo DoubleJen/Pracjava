@@ -8,15 +8,15 @@ import java.util.regex.MatchResult;
 public class Scan {
 	public static void main(String[] args) {
 //		第一種 nextInt()：取得使用者輸入的整數
-//		int n1, n2, n3;
-//		System.out.println("請輸入三個數字(以空白鍵分開)：");
-//		Scanner sc = new Scanner(System.in);
-//		n1 = sc.nextInt();
-//		n2 = sc.nextInt();
-//		n3 = sc.nextInt();
-//		System.out.println("您輸入第一個數字為：" + n1);
-//		System.out.println("您輸入第二個數字為：" + n2);
-//		System.out.println("您輸入第三個數字為：" + n3);
+		int n1, n2, n3;
+		System.out.println("請輸入三個數字(以空白鍵分開)：");
+		Scanner sc = new Scanner(System.in);
+		n1 = sc.nextInt();
+		n2 = sc.nextInt();
+		n3 = sc.nextInt();
+		System.out.println("您輸入第一個數字為：" + n1);
+		System.out.println("您輸入第二個數字為：" + n2);
+		System.out.println("您輸入第三個數字為：" + n3);
 		//Scanner默認使用的分隔符是空格、ENTER和tab。
 		
 		

@@ -6,18 +6,25 @@ public class Check_NumtoChinese {
 
 	public static void main(String[] args) {
 		String input = JOptionPane.showInputDialog("請輸入數字");
-		char a = '0';
-		for(int i=0; i<input.length(); i++){
-			a = input.charAt(i);
+		//System.out.println(input.length());
+		for(int i = 0; i<input.length(); i++){
+			System.out.print(input.charAt(i));
 			
 		}
-		System.out.println(a);
-		switch(a){
-				case '1': System.out.println("壹"); break;
-				default: System.out.println("空空如也"); break;
-			}
-
 		
+		
+//		char a = '0';
+//		for(int i=0; i<input.length(); i++){
+//			a = input.charAt(i);
+//			
+//		}
+//		System.out.println(a);
+//		switch(a){
+//				case '1': System.out.println("壹"); break;
+//				default: System.out.println("空空如也"); break;
+//			}
+//
+//		
 		
 //		int num = 10;
 //		switch(num){
