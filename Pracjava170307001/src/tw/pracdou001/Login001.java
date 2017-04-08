@@ -72,8 +72,9 @@ public class Login001 extends JFrame{
 		login2.setBackground(Color.white);
 		login2.setPreferredSize(new Dimension(0, 200));
 		
-		//設定"輸入Id"欄位字體與擺放位置
+		//設定"輸入Id"欄位字體、提示框與擺放位置
 		IdInput.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));//IdInput.setFont(new Font("Arial Unicode MS", Font.BOLD, 16));
+		IdInput.setToolTipText("長度不限，字元限英、數字");
 		GridBagConstraints IdInput1 = new GridBagConstraints();
 		IdInput1.gridx = 0;
 		IdInput1.gridy = 0;
