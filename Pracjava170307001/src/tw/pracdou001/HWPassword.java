@@ -2,7 +2,7 @@ package tw.pracdou001;
 
 
 
-public class HWPassword extends Login001 {
+public class HWPassword  {//extends Login001
 	
 	
 	public static void main(String[] args) {
