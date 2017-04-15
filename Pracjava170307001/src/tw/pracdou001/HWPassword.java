@@ -1,6 +1,7 @@
 package tw.pracdou001;
 
-
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 public class HWPassword  {//extends Login001
 	
